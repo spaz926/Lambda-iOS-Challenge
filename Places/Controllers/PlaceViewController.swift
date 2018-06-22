@@ -10,16 +10,26 @@ import UIKit
 
 class PlaceViewController: UIViewController {
     
-    var place = String()
-    var lastVisited = String()
+    var place: Place?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let place = place else { return }
+        self.title = place.name
+        
+    }
     
     @IBOutlet weak var lastVisitText: UITextView!
     
     @IBAction func showLastVisited(_ sender: UIButton) {
         
+        guard let place = place else { return }
+        
         lastVisitText.isHidden = false
-        lastVisitText.text = "I last visited \(place) in \(lastVisited)"
+        lastVisitText.text = "I last visited \(place.name) in \(place.lastVisit)"
         
     }
+    
     
 }

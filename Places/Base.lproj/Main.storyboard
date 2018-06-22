@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Places View Controller-->
+        <!--Places-->
         <scene sceneID="e7E-sP-wWr">
             <objects>
                 <tableViewController id="EDT-Eh-yBI" customClass="PlacesViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,13 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlacesCell" id="fGF-1w-eQ6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlacesCell" textLabel="brW-iz-LVb" style="IBUITableViewCellStyleDefault" id="fGF-1w-eQ6">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGF-1w-eQ6" id="Hj9-3g-8yI">
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="brW-iz-LVb">
+                                            <rect key="frame" x="20" y="0.0" width="356" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="lO6-3R-bfv" kind="show" identifier="showPlaceDetail" id="Zf5-iz-c2B"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,10 +45,7 @@
                             <outlet property="delegate" destination="EDT-Eh-yBI" id="na0-co-gOp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gr6-Jj-LDi"/>
-                    <connections>
-                        <segue destination="lO6-3R-bfv" kind="show" identifier="showPlaceDetail" id="Zdz-nk-qwd"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Places" id="gr6-Jj-LDi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5WF-SP-TaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="-966" y="36"/>
         </scene>
-        <!--Place View Controller-->
+        <!--Places View Controller-->
         <scene sceneID="kpr-zh-RmW">
             <objects>
                 <viewController id="lO6-3R-bfv" customClass="PlaceViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,6 +103,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DmJ-t3-mdX"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Places View Controller" id="dmO-3h-9aw">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SgW-wB-rhy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="lastVisitText" destination="nKD-9p-lmA" id="w3x-UF-bGO"/>
                     </connections>
